@@ -1,5 +1,5 @@
 ## Introduction
-PISketch is an sketch algorithm that can find persistent and infrequent items (PI items) in data streams.
+PISketch is a sketch algorithm that can find persistent and infrequent items (PI items) in data streams.
 We compare PISketch with two strawman solutions: 1) On-Off +CM Sketch; 2) PIE + CM Sketch. For PISketch and On-Off + CM Sketch, we set the memory size range to 100KB-250KB. For PIE + CM Sketch, the memory size range is set to 10000KB-25000KB, which is 100 times the one of PISketch. 
 Our experimental results demonstrate the advantage of PISketch over the two strawman solutions: 1) The Recall Rate (RR) of PISketch is around 25.3% and 66.3% higher than the two strawman solutions, respectively; 2) The Average Relative Error (ARE) of PISketch is around 820.9 (up to 1188.8) and 126.2 (up to 265.6) times lower than the two strawman solutions, respectively; 3) The insertion throughput of PISketch is around 1.23 and 16.5 times higher than the two strawman solutions, respectively.
 ## Memory allocation and parameter settings
