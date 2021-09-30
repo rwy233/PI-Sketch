@@ -10,7 +10,6 @@
 #include <algorithm>
 #include <set>
 //#include <fstream>
-// 0xD4C3B2A1,默认是反向读的
 
 #define PcapHeaderSize 24
 #define MaxDataSize 100000
@@ -74,14 +73,14 @@ bool ExtractPcapPacket(FILE *fin, at_Packet *packet)
 		uint32_t caplen = num[2];
 		uint8_t data[MaxDataSize];
 			
-		/* 然后读取data部分 */
+		
 		if(fread((void*)data, sizeof(uint8_t), caplen, fin) != caplen) {
 			printf(">>> error on reading data\n");
 			return 0;
 		}
 			
 		
-		if(!((data[14]>>4) == 4 && caplen >= 24))	// 如果不是IPv4包或者不合格，那么就跳过{
+		if(!((data[14]>>4) == 4 && caplen >= 24))	
 			continue;
 		
 		uint8_t Protocol_Type = data[23];
