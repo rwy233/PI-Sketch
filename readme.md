@@ -15,3 +15,17 @@ g++
 ``` bash
 $ ./work.sh
 ```
+## files introduction
+mrun.cpp:main source cpp file
+
+PISketch.h:PISketch source cpp file
+
+OO_FPI.h,bitset.h,CMSketch.h: On-off source cpp file
+
+pie.h,CMSketch.h: PIE source cpp file
+
+BOBHash32.h,hash_class.h: hash functions
+
+data.h : definition of data
+
+definition.h: definition of variables and parameters
