@@ -16,3 +16,13 @@ g++
 ``` bash
 $ ./work.sh
 ```
+## Info
+mrun.cpp: main source file.
+
+PISketch.h, OO_FPI.h, pie.h: PISketch, On-Off, PIE's source cpp file.
+
+data.h: Definition of data
+
+definition.h: Definition of variables and parameters
+
+BOBHash32.h,hash_class.h/hash_class.cpp: Hash functions
