@@ -1,6 +1,15 @@
 ## Introduction
 PISketch is an algorithm that can find persistent and infrequent items (PI items) in data streams.
-We compare PISketch with two strawman solutions: 1) On-Off +CM Sketch; 2) PIE + CM Sketch.For PISketch and On-Off + CMSketch, we set the memory size range to 100KB-250KB. ForPIE + CM Sketch, the memory size range is set to 10000KB-25000KB, which is 100 times the one of PISketch. 
+We compare PISketch with two strawman solutions: 1) On-Off +CM Sketch; 2) PIE + CM Sketch.For PISketch and On-Off + CMSketch, we set the memory size range to 100KB-250KB. ForPIE + CM Sketch, the memory size range is set to 10000KB-25000KB, which is 100 times the one of PISketch. Because PIE needs to maintain a Space-Time Bloom filter for every period, we use Q times the default memory for PIE, where Q denotes the number of periods. 
+In all our experiments, we set Q=1000. For the CM Sketch, we set the number of arrays to 3. 
+We first assign memory to PIE and then allocate the remaining memory to the CM Sketch.
+In the following, we refer to On-Off + CM Sketch as Sol-1 and PIE + CM Sketch as Sol-2 for short.
+## parameter settings
+PI Sketch:10% memory for Bloom Filter, 90% memory for Sketch
+
+PIE+CM   :1%  memory for CM Sketch, 99% memory for PIE
+
+On-Off+CM Sketch: 10% memory for On-Off, 90% memory for CM Sketch
 ## Requirements
 g++
 ## How to run
