@@ -7,7 +7,7 @@ In the following, we refer to On-Off + CM Sketch as Sol-1 and PIE + CM Sketch as
 ## parameter settings
 PISketch:10% memory for Bloom Filter, 90% memory for buckets.
 
-PIE+CM   :1%  memory for CM Sketch, 99% memory for PIE
+PIE+CM Sketch:1%  memory for CM Sketch, 99% memory for PIE
 
 On-Off+CM Sketch: 10% memory for On-Off, 90% memory for CM Sketch, and SLOT_NUM = 3.
 ## Requirements
