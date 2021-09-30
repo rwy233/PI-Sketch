@@ -29,18 +29,18 @@ int main(int argc, char *argv[])
 	int cnt = 0;
 	srand((unsigned)time(NULL));
 
-	/*中间文件*/
+	
 	char medFlowDir[LSTRING] = "mix/intermediate.dat";
 	// FILE *fmed = fopen(medFlowDir, "wb");
 	// fclose(fmed);
 
-	/*攻击流文件*/
+	
 	char attackFlowDir[INSERTNUM][LSTRING] = {
 		"attack/9002.pcap"
 		// "attack/PlugX.pcap"
 	};	
 
-	/*输出文件*/
+	
 	char mixFlowDir[LSTRING] = "mix/mix.dat";
 	char atklFlowDir[LSTRING] = "mix/attacklist.dat";
 	FILE *fatklist = fopen(atklFlowDir, "wb");
@@ -48,7 +48,7 @@ int main(int argc, char *argv[])
 	Packet *attackPacket = new Packet;
 	printf("%s\n", mixFlowDir);
 
-	/*标定正常流开始时间*/ 
+	
 	printf("Copying normal flows...\n");
 	
 	set<uint64_t> attackList;
@@ -70,7 +70,7 @@ int main(int argc, char *argv[])
 			FILE *fmix = fopen(mixFlowDir, "wb");
 			
 
-			/*读去文件头，标定攻击流开始时间*/
+			
 			ReadPcapFileHeader(fatk);
 			ExtractPcapPacket(fatk, attackPacket);
 			uint64_t attackStartUs = attackPacket->us;
@@ -84,11 +84,11 @@ int main(int argc, char *argv[])
 				normalPacket->us -= normalStartUs;
 				while (true)
 				{
-					/*若该攻击包晚于当前正常包，暂停写入*/
+					
 					if (US(attackPacket) >= normalPacket->us)
 						break;
 					
-					// /*写入攻击流*/
+					
 					// cout << US(attackPacket) <<" "<<ID(attackPacket)<<endl; 
 					// cout << normalStartUs << endl;
 					// while(1);
@@ -99,7 +99,7 @@ int main(int argc, char *argv[])
 					++Packetnum;
 					++attackSeq;
 
-					/*若该攻击流未出现过，写入攻击流表*/
+					
 					if(attackList.insert(attackPacket->id).second)
 					{
 						WriteFormattedPacket(fatklist, attackPacket);
@@ -108,7 +108,7 @@ int main(int argc, char *argv[])
 					}
 
 
-					/*若攻击流读完，从头读起*/
+					
 					if (!ExtractPcapPacket(fatk, attackPacket))
 					{
 						// printf("end!\n");
@@ -121,7 +121,7 @@ int main(int argc, char *argv[])
 					}
 				}
 
-				/*写入正常流*/
+				
 				WriteFormattedPacket(fmix, normalPacket);
 				++Normalnum;
 				++Packetnum;
@@ -158,7 +158,7 @@ int main(int argc, char *argv[])
 			fclose(fatk);
 			// printf("\033[1A\033[KAttack flow %d inserted\n", i);
 
-			/*将输出文件复制到中间文件*/
+			
 			fmed = fopen(medFlowDir, "wb");
 			fmix = fopen(mixFlowDir, "rb");
 			while (ExtractFormattedPacket(fmix, normalPacket))
