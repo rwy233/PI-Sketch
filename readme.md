@@ -13,6 +13,8 @@ On-Off+CM Sketch: 10% memory for On-Off, 90% memory for CM Sketch, and SLOT_NUM 
 ## Requirements
 g++
 ## How to run
+1. put dataset file into dataset/
+2.
 ``` bash
 $ ./work.sh
 ```
