@@ -14,11 +14,14 @@ PISketch: 10% memory for Bloom Filter, 90% memory for buckets.
 PIE+CM Sketch: 1% memory for CM Sketch, 99% memory for PIE. 
 Because PIE needs to maintain a Space-Time Bloom filter for every period, we use Q times the default memory for PIE, where Q denotes the number of periods. In all our experiments, we set Q=1000. For the CM Sketch, we set the number of arrays to 3. We first assign memory to PIE and then allocate the remaining memory to the CM Sketch.
 
-![image](https://user-images.githubusercontent.com/30072188/135476660-46b2cd42-8e5f-4efe-a658-71e2954bbcc3.png)
+
+![image](https://user-images.githubusercontent.com/30072188/135477430-a2f17500-71e4-4379-936d-c04274f1d440.png)
+
 
 On-Off+CM Sketch: 10% memory for On-Off, 90% memory for CM Sketch.
 
-![image](https://user-images.githubusercontent.com/30072188/135477244-e4eb45c6-10ef-47bc-878a-ab102f06b934.png)
+![image](https://user-images.githubusercontent.com/30072188/135477491-6bfe4b11-e50b-4124-b676-a5cfdf9ebeab.png)
+
 
 ## Requirements
 g++
