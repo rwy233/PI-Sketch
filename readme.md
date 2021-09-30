@@ -16,7 +16,7 @@ g++
 ``` bash
 $ ./work.sh
 ```
-## Info
+## Introduction of files
 mrun.cpp: main source file.
 
 PISketch.h, OO_FPI.h, pie.h: PISketch, On-Off, PIE's source cpp file.
