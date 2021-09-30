@@ -5,11 +5,11 @@ In all our experiments, we set Q=1000. For the CM Sketch, we set the number of a
 We first assign memory to PIE and then allocate the remaining memory to the CM Sketch.
 In the following, we refer to On-Off + CM Sketch as Sol-1 and PIE + CM Sketch as Sol-2 for short.
 ## parameter settings
-PI Sketch:10% memory for Bloom Filter, 90% memory for Sketch
+PISketch:10% memory for Bloom Filter, 90% memory for buckets.
 
 PIE+CM   :1%  memory for CM Sketch, 99% memory for PIE
 
-On-Off+CM Sketch: 10% memory for On-Off, 90% memory for CM Sketch
+On-Off+CM Sketch: 10% memory for On-Off, 90% memory for CM Sketch, and SLOT_NUM = 3.
 ## Requirements
 g++
 ## How to run
