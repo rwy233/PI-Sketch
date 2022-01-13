@@ -11,7 +11,7 @@ put datasets into dataset/
 ``` bash
 $ ./work.sh
 ```
-## files introduction
+## Files introduction
 mrun.cpp:main source cpp file
 
 PISketch.h:PISketch source cpp file
